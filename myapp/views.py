@@ -10,7 +10,7 @@ def chart(request):
 	dataSource['chart'] = { 
     	"caption": "Delhi population growth rates",
         "xAxisName": "Year",
-        "yAxisName": "Percent change",
+        "yAxisName": "Population",
         "theme": "zune"
 
     }
@@ -20,7 +20,7 @@ def chart(request):
 	for key in Population.objects.all():
   		data = {}
   		data['label'] = key.year
-  		data['value'] = key.growth_rate
+  		data['value'] = key.population
   		data['tooltext']= key.growth_rate
   		dataSource['data'].append(data)
 
